@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/Piloto")
+@CrossOrigin(origins="*")
 public class DriverController {
 
     @Autowired
@@ -40,7 +41,7 @@ public class DriverController {
         return ds.getDriver(id);
     }
 
-    @GetMapping("/getDriversTeam")
+    @GetMapping("/getDriversTeam/{teamName}")
     public List<DriverDTO> getDriverTeam(@PathVariable final String teamName){
         return ds.getDriverxTeam(teamName);
     }

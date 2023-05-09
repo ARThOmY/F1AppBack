@@ -4,14 +4,15 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Team {
-    @NotNull
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -21,6 +22,5 @@ public class Team {
     private int Position;
 
     @OneToMany(mappedBy = "team")
-    @JsonIgnore
     private List<Driver> driverList;
 }

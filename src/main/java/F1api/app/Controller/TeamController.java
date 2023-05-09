@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/Equipo")
+@CrossOrigin(origins="*")
 public class TeamController {
 
     @Autowired
