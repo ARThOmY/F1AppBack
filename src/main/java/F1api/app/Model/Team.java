@@ -1,4 +1,4 @@
-package Vetapi.app.Model;
+package F1api.app.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -9,13 +9,18 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 @Data
 @AllArgsConstructor
-public class TeamDTO {
+@Entity
+public class Team {
+    @NotNull
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String Name;
     private String Car;
     private String Location;
     private int Position;
 
-    @OneToMany(mappedBy = "driverDTO")
+    @OneToMany(mappedBy = "team")
     @JsonIgnore
-    private List<DriverDTO> driverList;
+    private List<Driver> driverList;
 }

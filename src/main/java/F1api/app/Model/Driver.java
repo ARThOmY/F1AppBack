@@ -1,12 +1,10 @@
-package Vetapi.app.Model;
+package F1api.app.Model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 @Data
 @AllArgsConstructor
 @Entity

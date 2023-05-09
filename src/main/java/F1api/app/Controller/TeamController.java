@@ -1,8 +1,8 @@
-package Vetapi.app.Controller;
+package F1api.app.Controller;
 
-import Vetapi.app.Model.Team;
-import Vetapi.app.Model.TeamDTO;
-import Vetapi.app.Service.TeamService;
+import F1api.app.Model.Team;
+import F1api.app.Model.TeamDTO;
+import F1api.app.Service.TeamService;
 import jakarta.annotation.Nonnull;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
-package Vetapi.app.Repository;
+package F1api.app.Repository;
 
-import Vetapi.app.Model.Driver;
+import F1api.app.Model.Driver;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

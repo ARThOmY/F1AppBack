@@ -1,10 +1,9 @@
-package Vetapi.app.Service;
+package F1api.app.Service;
 
-import Vetapi.app.Model.Driver;
-import Vetapi.app.Model.DriverDTO;
-import Vetapi.app.Model.Team;
-import Vetapi.app.Repository.DriverRepository;
-import Vetapi.app.Repository.TeamRepository;
+import F1api.app.Model.Driver;
+import F1api.app.Model.DriverDTO;
+import F1api.app.Repository.DriverRepository;
+import F1api.app.Repository.TeamRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

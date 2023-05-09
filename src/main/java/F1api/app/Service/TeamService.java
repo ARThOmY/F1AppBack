@@ -1,11 +1,8 @@
-package Vetapi.app.Service;
+package F1api.app.Service;
 
-import Vetapi.app.Model.Driver;
-import Vetapi.app.Model.DriverDTO;
-import Vetapi.app.Model.Team;
-import Vetapi.app.Model.TeamDTO;
-import Vetapi.app.Repository.DriverRepository;
-import Vetapi.app.Repository.TeamRepository;
+import F1api.app.Model.Team;
+import F1api.app.Repository.TeamRepository;
+import F1api.app.Model.TeamDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
-import java.time.temporal.TemporalAccessor;
 import java.util.ArrayList;
 import java.util.List;
 
