@@ -1,5 +1,6 @@
 package F1api.app.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DriverDTO {
+    private int id;
     private String Name;
     private String LastName;
     private int Age;
@@ -16,6 +18,7 @@ public class DriverDTO {
     private int CarNumber;
     private String Nationality;
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "team_id")
     private TeamDTO team;
 }

@@ -19,19 +19,17 @@ import static org.springframework.http.HttpStatus.*;
 @Service
 public class DriverService {
     private final DriverRepository dr;
-    private final TeamRepository tr;
+    private final TeamService ts;
     private final ModelMapper mm = new ModelMapper();
     @Autowired
-    public DriverService(DriverRepository dr, TeamRepository tr){
+    public DriverService(DriverRepository dr, TeamService ts){
         this.dr = dr;
-        this.tr = tr;
+        this.ts = ts;
     }
-    public ResponseEntity addDriver(Driver d){
-
-        //Team t = tr.findById(d.getTeam().getId()).orElseThrow(() -> new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Equipo no encontrada"));
+    public ResponseEntity addDriver(Driver d, Integer teamId){
         try{
+            d.setTeam(ts.getTeam(teamId));
             dr.save(d);
-            //tr.save(t);
             return ResponseEntity.status(CREATED).build();
         }
         catch(Exception e){

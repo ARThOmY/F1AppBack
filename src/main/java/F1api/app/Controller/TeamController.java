@@ -24,11 +24,11 @@ public class TeamController {
         return ts.addTeam(t);
 
     }
-    @PostMapping("{id}/delete")
+    @PostMapping("/{id}/delete")
     public ResponseEntity delTeam(@RequestBody final @NotNull Integer id){
         return ts.deleteTeam(id);
     }
-    @PostMapping("{id}/update")
+    @PostMapping("/{id}/update")
     public ResponseEntity updateTeam(@PathVariable final @Nonnull Integer id, @RequestBody  final Team t){
         return ts.updateTeam(id, t);
     }
@@ -37,7 +37,7 @@ public class TeamController {
         return ts.getAll();
     }
     @GetMapping("/{id}")
-    public TeamDTO getTeam(@PathVariable final Integer id){
+    public Team getTeam(@PathVariable final Integer id){
         return ts.getTeam(id);
     }
 }

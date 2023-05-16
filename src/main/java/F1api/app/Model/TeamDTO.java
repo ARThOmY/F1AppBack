@@ -17,6 +17,5 @@ public class TeamDTO {
     private int Position;
 
     @OneToMany(mappedBy = "driverDTO")
-    @JsonIgnore
     private List<DriverDTO> driverList;
 }

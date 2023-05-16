@@ -58,9 +58,9 @@ public class TeamService {
             return ResponseEntity.status(INTERNAL_SERVER_ERROR).build();
         }
     }
-    public TeamDTO getTeam(int id){
+    public Team getTeam(int id){
         Team t = tr.findById(id).orElseThrow(() -> new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Equipo no encontrado"));
-        return mm.map(t, TeamDTO.class);
+        return t;
     }
 
     public List<TeamDTO> getAll(){

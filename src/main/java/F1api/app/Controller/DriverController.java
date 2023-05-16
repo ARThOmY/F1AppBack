@@ -19,17 +19,17 @@ public class DriverController {
     @Autowired
     private DriverService ds;
 
-    @PostMapping("/add")
-    public ResponseEntity addTeam(@RequestBody final Driver d){
-        return ds.addDriver(d);
+    @PostMapping("/{teamid}/add")
+    public ResponseEntity addDriver(@RequestBody final Driver d, @PathVariable final Integer teamid){
+        return ds.addDriver(d, teamid);
 
     }
-    @PostMapping("{id}/delete")
-    public ResponseEntity delTeam(@RequestBody final @NotNull Integer id){
+    @PostMapping("/{id}/delete")
+    public ResponseEntity delDriver(@PathVariable final @NotNull Integer id){
         return ds.deleteDriver(id);
     }
-    @PostMapping("{id}/update")
-    public ResponseEntity updateTeam(@PathVariable final @Nonnull Integer id, @RequestBody  final Driver d){
+    @PostMapping("/{id}/update")
+    public ResponseEntity updDriver(@PathVariable final @Nonnull Integer id, @RequestBody  final Driver d){
         return ds.updateDriver(id, d);
     }
     @GetMapping("/getAll")
