@@ -11,6 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TeamDTO {
+    private int id;
     private String Name;
     private String Car;
     private String Location;
