@@ -28,7 +28,7 @@ public class DriverController {
     public ResponseEntity delDriver(@PathVariable final @NotNull Integer id){
         return ds.deleteDriver(id);
     }
-    @PostMapping("/{id}/update")
+    @PostMapping("/{id}/{team_id}/update")
     public ResponseEntity updDriver(@PathVariable final @NotNull Integer id, @RequestBody  final Driver d, @PathVariable final @NotNull Integer team_id){
         return ds.updateDriver(id, d,team_id);
     }
