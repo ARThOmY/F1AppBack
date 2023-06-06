@@ -19,12 +19,15 @@ import static org.springframework.http.HttpStatus.*;
 @Service
 public class DriverService {
     private final DriverRepository dr;
+    private final TeamRepository tr;
     private final TeamService ts;
     private final ModelMapper mm = new ModelMapper();
     @Autowired
-    public DriverService(DriverRepository dr, TeamService ts){
+    public DriverService(DriverRepository dr, TeamService ts, TeamRepository tr){
         this.dr = dr;
         this.ts = ts;
+        this.tr = tr;
+
     }
     public ResponseEntity addDriver(Driver d, Integer teamId){
         try{
@@ -45,7 +48,7 @@ public class DriverService {
             return ResponseEntity.status(INTERNAL_SERVER_ERROR).build();
         }
     }
-    public ResponseEntity updateDriver(Integer id, Driver d) {
+    public ResponseEntity updateDriver(Integer id, Driver d, Integer team_id) {
 
         try{
             Driver dd = dr.findById(id).orElseThrow(()->new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Piloto no encontrado"));
@@ -56,6 +59,7 @@ public class DriverService {
             dd.setPosition(d.getPosition());
             dd.setCarNumber(d.getCarNumber());
             dd.setNationality(d.getNationality());
+            dd.setTeam(tr.findById(team_id).orElseThrow());
             dr.save(dd);
             return ResponseEntity.status(OK).build();
         }catch (Exception e){
